@@ -1,0 +1,753 @@
+[
+    {
+        "name": "Tomato",
+        "species": "Solanum lycopersicum",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 6,
+            "max": 14
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 10
+        },
+        "harvest": {
+            "min": 60,
+            "max": 85,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.6 cm",
+                "imperial": "0.25 in"
+            },
+            "spacing": {
+                "metric": "45-60 cm",
+                "imperial": "18-24 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 5,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Heavy Feeder",
+        "nutrients": {
+            "calories": 18,
+            "carbohydrates": 3.9,
+            "protein": 0.9,
+            "fat": 0.2
+        }
+    },
+    {
+        "name": "Carrot",
+        "species": "Daucus carota",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 14,
+            "max": 21
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 10
+        },
+        "harvest": {
+            "min": 70,
+            "max": 80,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.6-1.2 cm",
+                "imperial": "0.25-0.5 in"
+            },
+            "spacing": {
+                "metric": "5-7 cm",
+                "imperial": "2-3 in"
+            }
+        },
+        "sun": {
+            "min": "Partial Shade",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 3,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Light Feeder",
+        "nutrients": {
+            "calories": 41,
+            "carbohydrates": 9.6,
+            "protein": 0.9,
+            "fat": 0.2
+        }
+    },
+    {
+        "name": "Basil",
+        "species": "Ocimum basilicum",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 5,
+            "max": 10
+        },
+        "hardinessZone": {
+            "min": 4,
+            "max": 10
+        },
+        "harvest": {
+            "min": 60,
+            "max": 90,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.3 cm",
+                "imperial": "0.1 in"
+            },
+            "spacing": {
+                "metric": "25-30 cm",
+                "imperial": "10-12 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 1.5,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Light Feeder",
+        "nutrients": {
+            "calories": 23,
+            "carbohydrates": 2.7,
+            "protein": 3.2,
+            "fat": 0.6
+        }
+    },
+    {
+        "name": "Strawberry",
+        "species": "Fragaria × ananassa",
+        "image": "",
+        "category": "Fruit",
+        "germination": {
+            "min": 14,
+            "max": 28
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 10
+        },
+        "harvest": {
+            "min": 120,
+            "max": 180,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0 cm",
+                "imperial": "0 in"
+            },
+            "spacing": {
+                "metric": "30-45 cm",
+                "imperial": "12-18 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 2,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Heavy Feeder",
+        "nutrients": {
+            "calories": 32,
+            "carbohydrates": 7.7,
+            "protein": 0.7,
+            "fat": 0.3
+        }
+    },
+    {
+        "name": "Lavender",
+        "species": "Lavandula",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 14,
+            "max": 21
+        },
+        "hardinessZone": {
+            "min": 5,
+            "max": 9
+        },
+        "harvest": {
+            "min": 90,
+            "max": 100,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.3 cm",
+                "imperial": "0.1 in"
+            },
+            "spacing": {
+                "metric": "30-60 cm",
+                "imperial": "12-24 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "soilImpact": "Light Feeder"
+    },
+    {
+        "name": "Oak Tree",
+        "species": "Quercus",
+        "image": "",
+        "category": "Tree",
+        "germination": {
+            "min": 30,
+            "max": 60
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 9
+        },
+        "planting": {
+            "depth": {
+                "metric": "2.5-5 cm",
+                "imperial": "1-2 in"
+            },
+            "spacing": {
+                "metric": "6-12 m",
+                "imperial": "20-40 ft"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "soilImpact": "Soil Builder"
+    },
+    {
+        "name": "Sunflower",
+        "species": "Helianthus annuus",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 7,
+            "max": 10
+        },
+        "hardinessZone": {
+            "min": 2,
+            "max": 11
+        },
+        "harvest": {
+            "min": 80,
+            "max": 120,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "2.5 cm",
+                "imperial": "1 in"
+            },
+            "spacing": {
+                "metric": "45-60 cm",
+                "imperial": "18-24 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0.5,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Heavy Feeder",
+        "nutrients": {
+            "calories": 584,
+            "carbohydrates": 20,
+            "protein": 21,
+            "fat": 51
+        }
+    },
+    {
+        "name": "Lettuce",
+        "species": "Lactuca sativa",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 7,
+            "max": 14
+        },
+        "hardinessZone": {
+            "min": 4,
+            "max": 9
+        },
+        "harvest": {
+            "min": 30,
+            "max": 70,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.3 cm",
+                "imperial": "0.125 in"
+            },
+            "spacing": {
+                "metric": "20-30 cm",
+                "imperial": "8-12 in"
+            }
+        },
+        "sun": {
+            "min": "Partial Shade",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 2.5,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Light Feeder",
+        "nutrients": {
+            "calories": 15,
+            "carbohydrates": 2.9,
+            "protein": 1.4,
+            "fat": 0.2
+        }
+    },
+    {
+        "name": "Blueberry",
+        "species": "Vaccinium",
+        "image": "",
+        "category": "Bush",
+        "germination": {
+            "min": 28,
+            "max": 56
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 7
+        },
+        "harvest": {
+            "min": 365,
+            "max": 730,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.6 cm",
+                "imperial": "0.25 in"
+            },
+            "spacing": {
+                "metric": "90-120 cm",
+                "imperial": "3-4 ft"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 1.5,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Acid Lover",
+        "nutrients": {
+            "calories": 57,
+            "carbohydrates": 14,
+            "protein": 0.7,
+            "fat": 0.3
+        }
+    },
+    {
+        "name": "Rose",
+        "species": "Rosa",
+        "image": "",
+        "category": "Bush",
+        "germination": {
+            "min": 30,
+            "max": 90
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 10
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.6 cm",
+                "imperial": "0.25 in"
+            },
+            "spacing": {
+                "metric": "60-90 cm",
+                "imperial": "24-36 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "soilImpact": "Heavy Feeder"
+    },
+    {
+        "name": "Potato",
+        "species": "Solanum tuberosum",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 14,
+            "max": 28
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 10
+        },
+        "harvest": {
+            "min": 70,
+            "max": 120,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "7-10 cm",
+                "imperial": "3-4 in"
+            },
+            "spacing": {
+                "metric": "30 cm",
+                "imperial": "12 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 4,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Heavy Feeder",
+        "nutrients": {
+            "calories": 77,
+            "carbohydrates": 17,
+            "protein": 2,
+            "fat": 0.1
+        }
+    },
+    {
+        "name": "Apple Tree",
+        "species": "Malus domestica",
+        "image": "",
+        "category": "Tree",
+        "germination": {
+            "min": 30,
+            "max": 90
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 9
+        },
+        "harvest": {
+            "min": 730,
+            "max": 1825,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "Tree root ball depth",
+                "imperial": "Tree root ball depth"
+            },
+            "spacing": {
+                "metric": "4-6 m",
+                "imperial": "13-20 ft"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 10,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "nutrients": {
+            "calories": 52,
+            "carbohydrates": 14,
+            "protein": 0.3,
+            "fat": 0.2
+        }
+    },
+    {
+        "name": "Mint",
+        "species": "Mentha",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 10,
+            "max": 15
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 11
+        },
+        "harvest": {
+            "min": 60,
+            "max": 90,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.3 cm",
+                "imperial": "0.1 in"
+            },
+            "spacing": {
+                "metric": "45-60 cm",
+                "imperial": "18-24 in"
+            }
+        },
+        "sun": {
+            "min": "Partial Shade",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 1,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Invasive",
+        "nutrients": {
+            "calories": 70,
+            "carbohydrates": 15,
+            "protein": 3.8,
+            "fat": 0.9
+        }
+    },
+    {
+        "name": "Cucumber",
+        "species": "Cucumis sativus",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 3,
+            "max": 10
+        },
+        "hardinessZone": {
+            "min": 4,
+            "max": 11
+        },
+        "harvest": {
+            "min": 50,
+            "max": 70,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "2.5 cm",
+                "imperial": "1 in"
+            },
+            "spacing": {
+                "metric": "30-45 cm",
+                "imperial": "12-18 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 8,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Heavy Feeder",
+        "nutrients": {
+            "calories": 15,
+            "carbohydrates": 3.6,
+            "protein": 0.7,
+            "fat": 0.1
+        }
+    },
+    {
+        "name": "Bell Pepper",
+        "species": "Capsicum annuum",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 10,
+            "max": 21
+        },
+        "hardinessZone": {
+            "min": 4,
+            "max": 11
+        },
+        "harvest": {
+            "min": 60,
+            "max": 90,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "0.6 cm",
+                "imperial": "0.25 in"
+            },
+            "spacing": {
+                "metric": "30-45 cm",
+                "imperial": "12-18 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 2.5,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Heavy Feeder",
+        "nutrients": {
+            "calories": 31,
+            "carbohydrates": 6,
+            "protein": 1,
+            "fat": 0.3
+        }
+    },
+    {
+        "name": "Spinach",
+        "species": "Spinacia oleracea",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 5,
+            "max": 10
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 9
+        },
+        "harvest": {
+            "min": 30,
+            "max": 45,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": "1.2 cm",
+                "imperial": "0.5 in"
+            },
+            "spacing": {
+                "metric": "10-15 cm",
+                "imperial": "4-6 in"
+            }
+        },
+        "sun": {
+            "min": "Partial Shade",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 2,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Light Feeder",
+        "nutrients": {
+            "calories": 23,
+            "carbohydrates": 3.6,
+            "protein": 2.9,
+            "fat": 0.4
+        }
+    },
+    {
+        "name": "Tulip",
+        "species": "Tulipa",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 90,
+            "max": 120
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 8
+        },
+        "planting": {
+            "depth": {
+                "metric": "15-20 cm",
+                "imperial": "6-8 in"
+            },
+            "spacing": {
+                "metric": "10-15 cm",
+                "imperial": "4-6 in"
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "soilImpact": "Moderate Feeder"
+    },
+    {
+        "name": "Maple Tree",
+        "species": "Acer",
+        "image": "",
+        "category": "Tree",
+        "germination": {
+            "min": 40,
+            "max": 90
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 9
+        },
+        "planting": {
+            "depth": {
+                "metric": "Tree root ball depth",
+                "imperial": "Tree root ball depth"
+            },
+            "spacing": {
+                "metric": "9-15 m",
+                "imperial": "30-50 ft"
+            }
+        },
+        "sun": {
+            "min": "Partial Shade",
+            "max": "Full Sun"
+        },
+        "soilImpact": "Soil Builder"
+    },
+    {
+        "name": "Fern",
+        "species": "Polypodiopsida",
+        "image": "",
+        "category": "Bush",
+        "germination": {
+            "min": 30,
+            "max": 180
+        },
+        "hardinessZone": {
+            "min": 3,
+            "max": 10
+        },
+        "planting": {
+            "depth": {
+                "metric": "Surface",
+                "imperial": "Surface"
+            },
+            "spacing": {
+                "metric": "30-60 cm",
+                "imperial": "12-24 in"
+            }
+        },
+        "sun": {
+            "min": "Shade",
+            "max": "Partial Shade"
+        },
+        "soilImpact": "Soil Builder"
+    }
+]

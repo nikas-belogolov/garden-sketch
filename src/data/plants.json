@@ -1,0 +1,37 @@
+[
+    {
+        "commonName": "Tomato",
+        "scientificName": "",
+        "img": "",
+        "goodCompanions": [
+            "Basil"
+        ],
+        "category": "vegetable",
+        "sunlightRequirements": ["full-sun"],
+        "rowSpacing": 50,
+        "plantSpacing": 30
+    },
+    {
+        "commonName": "Basil",
+        "scientificName": "",
+        "img": "basil.svg",
+        "goodCompanions": [
+            "Tomato"
+        ],
+        "category": "herb",
+        "sunlightRequirements": ["full-sun"],
+        "rowSpacing": 50,
+        "plantSpacing": 30
+    },
+    {
+        "commonName": "White Onion",
+        "scientificName": "Allium cepa",
+        "img": "white-onion.svg",
+        "goodCompanions": [
+        ],
+        "category": "vegetable",
+        "sunlightRequirements": ["full-sun", "partial-sun"],
+        "rowSpacing": 30,
+        "plantSpacing": 10
+    }
+]

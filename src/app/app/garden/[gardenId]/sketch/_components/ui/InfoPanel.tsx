@@ -2,7 +2,7 @@
 
 import { useAtom, useAtomValue } from "jotai";
 import { selectedIdsAtom } from "@/lib/stores/gardenLayoutAtoms";
-import { useGarden } from "@/lib/stores/GardenContext";
+import { useGarden } from "@/lib/context/GardenContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -195,7 +195,7 @@ export default function InfoPanel() {
         //                         Delete
         //                     </Button>
         //                 </div>
-                        
+
         //             </CardContent>
         //         )}
         //     </Card>

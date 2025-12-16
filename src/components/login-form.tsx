@@ -14,49 +14,31 @@ import { FormEvent, useState } from "react"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth/auth-client";
+import { useAuth } from "@/lib/context/AuthContext";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
 
-  const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  const { login, isLoading, error } = useAuth()
 
   async function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
-    setError(null);
-    setIsLoading(true);
 
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email")?.toString().trim();
     const password = formData.get("password")?.toString().trim();
 
-    if (!email || !password) {
-      setError("Please fill in all fields.");
-      setIsLoading(false);
-      return;
-    }
+    await login({
+      email,
+      password
+    })
 
-    try {
-          
-      const { error } = await authClient.signIn.email({
-        email,
-        password,
-      });
-
-      if (error) {
-        throw new Error(error.message || "Signin failed. Please try again.")
-      }
-
+    if (error == null)
       router.push("/app/garden/123/sketch");
-    } catch (err: any) {
-      setError(err.message ?? "An unexpected error occurred.")
-    } finally {
-      setIsLoading(false);
-    }
   }
 
   return (
@@ -86,7 +68,7 @@ export function LoginForm({
         </Field>
         <Field>
           <Button type="submit" disabled={isLoading}>Login</Button>
-          <p className="text-red-500">{error}</p>
+          <p className="text-red-500">{error?.message}</p>
         </Field>
         {/* <FieldSeparator>Or continue with</FieldSeparator> */}
         <Field>

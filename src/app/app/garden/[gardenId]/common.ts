@@ -49,20 +49,17 @@ export const perUnitStyles = {
 /* Canvas */
 
 export enum ShapeType {
-    Plant = "plant",
-
-    // Geometric Shapes
     Rect = "rect",
     Ellipse = "ellipse",
     Ring = "ring",
-    RegularPolygon = "regular_polygon",
-
+    RegularPolygon = "regularPolygon",
     Structure = "structure",
     Text = "text",
-    Layer = "layer"
+    Layer = "layer",
+    Plant = "plant"
 }
 
-export type ShapeProps = {
+export interface BaseShapeProps {
     id: string;
     pos: {
         x: number;
@@ -70,11 +67,11 @@ export type ShapeProps = {
     };
     w: number;
     h: number;
-    type: ShapeType;
     rotation: number;
 }
 
-export type PlantShapeProps = ShapeProps & {
+export interface PlantShapeProps extends BaseShapeProps {
+    type: ShapeType.Plant;
     commonName: string;
     scientificName: string;
     goodCompanions: string[];
@@ -85,23 +82,58 @@ export type PlantShapeProps = ShapeProps & {
     plantSpacing: number;
 }
 
-export type GeometricShapeProps = ShapeProps & {
+interface CommonGeometricProps {
     fill: string;
     stroke: string;
     strokeWidth: number;
+}
 
-    // Specifics
-    innerRadius?: number; // for Ring
-    innerRadiusRatio?: number; // for Ring (relative to outerRadius/width)
-    outerRadius?: number; // for Ring
-    sides?: number; // for RegularPolygon
-};
+export interface RectShapeProps extends BaseShapeProps, CommonGeometricProps {
+    type: ShapeType.Rect;
+}
 
-export type TextShapeProps = ShapeProps & {
+export interface EllipseShapeProps extends BaseShapeProps, CommonGeometricProps {
+    type: ShapeType.Ellipse;
+}
+
+export interface RingShapeProps extends BaseShapeProps, CommonGeometricProps {
+    type: ShapeType.Ring;
+    innerRadius?: number;
+    innerRadiusRatio?: number;
+    outerRadius?: number;
+}
+
+export interface RegularPolygonShapeProps extends BaseShapeProps, CommonGeometricProps {
+    type: ShapeType.RegularPolygon;
+    sides?: number;
+}
+
+export interface StructureShapeProps extends BaseShapeProps {
+    type: ShapeType.Structure;
+    // Add any specific properties for Structure here if needed
+}
+
+export interface TextShapeProps extends BaseShapeProps {
+    type: ShapeType.Text;
     text: string;
     fontSize: number;
     color: string;
 }
+
+export interface LayerShapeProps extends BaseShapeProps {
+    type: ShapeType.Layer;
+    // Add any specific properties for Layer here if needed
+}
+
+export type Shape =
+    | PlantShapeProps
+    | RectShapeProps
+    | EllipseShapeProps
+    | RingShapeProps
+    | RegularPolygonShapeProps
+    | StructureShapeProps
+    | TextShapeProps
+    | LayerShapeProps;
 
 /* Locale */
 export const measurementUnitAtom = atom(MeasurementUnit.Metric);

@@ -1,7 +1,5 @@
 import { createServer } from "http";
-import { parse } from "url";
 import next from "next";
-import { Server } from "socket.io";
 import { createSocketServer } from "@/lib/realtime/socket-server";
 
 const port = parseInt(process.env.PORT || "3000", 10);
@@ -11,8 +9,7 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const httpServer = createServer((req, res) => {
-    const parsedUrl = parse(req.url!, true);
-    handle(req, res, parsedUrl);
+    handle(req, res);
   })
 
   createSocketServer(httpServer);

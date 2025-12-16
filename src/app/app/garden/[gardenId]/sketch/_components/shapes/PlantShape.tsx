@@ -3,7 +3,7 @@ import { Group, KonvaNodeEvents, Label, Shape, Tag } from "react-konva";
 import { Ref, useCallback, useEffect, useRef, useState } from "react";
 import { useImage } from "react-konva-utils";
 import { metricToPixels, PlantShapeProps } from "../../../common";
-import { useGarden } from "@/lib/stores/GardenContext";
+import { useGarden } from "@/lib/context/GardenContext";
 
 interface PlantShapeComponentProps extends Konva.ShapeConfig, KonvaNodeEvents {
     node: PlantShapeProps,
@@ -83,9 +83,10 @@ export default function PlantShape({
 
             sceneFunc={sceneFunc}
             hitFunc={hitFunc}
-            
+
             ref={ref}
             {...props}
+            
             perfectDrawEnabled={false}
 
         />

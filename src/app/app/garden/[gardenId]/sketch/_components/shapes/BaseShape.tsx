@@ -1,15 +1,15 @@
 import { Group, Label, Tag, Text } from "react-konva";
-import { PlantShapeProps, ShapeProps, ShapeType, GeometricShapeProps } from "../../../common";
+import { PlantShapeProps, Shape, ShapeType } from "../../../common";
 import PlantShape from "./PlantShape";
 import GeometricShape from "./GeometricShape";
-import React, { forwardRef, Ref, startTransition, useEffect, useImperativeHandle, useRef, useState, useTransition } from "react";
+import React, { forwardRef, Ref, startTransition, useEffect, useImperativeHandle, useRef, useState, useTransition, useMemo } from "react";
 import Konva from "konva";
 import { useAtom, useSetAtom } from "jotai";
 import { selectedIdsAtom, shapesAtom, contextMenuIsVisibleAtom, contextMenuPositionAtom, currentShapeBoundBoxAtom } from "@/lib/stores/gardenLayoutAtoms";
 import { Portal } from "react-konva-utils";
-import { useGarden } from "@/lib/stores/GardenContext";
+import { useGarden } from "@/lib/context/GardenContext";
 
-import { throttle } from "@tanstack/pacer"
+
 
 import * as Y from "yjs"
 
@@ -18,7 +18,7 @@ import { TypedMap } from "yjs-types";
 import { useY } from "react-yjs";
 
 interface BaseShapeProps extends Konva.NodeConfig {
-    node: ShapeProps,
+    node: Shape,
     id: string,
     ref: Ref<Konva.Shape>
 }
@@ -44,7 +44,7 @@ const BaseShape = React.memo(({ node, id, ref }: BaseShapeProps) => {
 
     const [selectedIds, setSelectedIds] = useAtom(selectedIdsAtom);
     const { ydoc } = useGarden()
-    const nodeMap = useRef(ydoc.getMap("objects").get(id) as TypedMap<ShapeProps>)
+    const nodeMap = useRef(ydoc.getMap("objects").get(id) as TypedMap<BaseShapeProps>)
 
     const handleContextMenu = (e: Konva.KonvaEventObject<Event>) => {
         e.evt.preventDefault()
@@ -67,19 +67,24 @@ const BaseShape = React.memo(({ node, id, ref }: BaseShapeProps) => {
 
         if (node.type == ShapeType.Plant) {
             setCurrentShapeBoundBox({
-                width: (node as PlantShapeProps).plantSpacing,
-                height: (node as PlantShapeProps).rowSpacing,
+                width: node.plantSpacing,
+                height: node.rowSpacing,
             })
         }
         console.log(selectedIds)
     }
 
-    function handleDrag() {
+    const handleDrag = () => {
         if (!innerRef.current) return;
-        nodeMap.current.set("pos", innerRef.current?.getPosition())
+        nodeMap.current.set("pos", innerRef.current.getPosition())
     }
 
-    const handleDragEnd = () => undoManager.stopCapturing()
+    const handleDragEnd = () => {
+        if (innerRef.current) {
+            nodeMap.current.set("pos", innerRef.current.getPosition());
+        }
+        undoManager.stopCapturing()
+    }
 
     function handleTransformEnd(e: Konva.KonvaEventObject<Event>) {
 
@@ -131,21 +136,23 @@ const BaseShape = React.memo(({ node, id, ref }: BaseShapeProps) => {
 
     // Render the appropriate shape component based on type
     const renderShape = () => {
+
+
         switch (node.type) {
-            case "plant":
+            case ShapeType.Plant:
                 return (
                     <PlantShape
                         {...commonProps}
-                        node={node as PlantShapeProps}
+                        node={node}
                         setLabelText={setLabelText}
 
                     />
                 );
-            case ShapeType.Rect:
-            case ShapeType.Ellipse:
-            case ShapeType.Ring:
-            case ShapeType.RegularPolygon:
-                return <GeometricShape {...commonProps} node={node as GeometricShapeProps} />;
+            // case ShapeType.Rect:
+            // case ShapeType.Ellipse:
+            // case ShapeType.Ring:
+            // case ShapeType.RegularPolygon:
+            //     return <GeometricShape {...commonProps} node={node as GeometricShapeProps} />;
             // Add more shape types here as needed
             // case "rectangle":
             //     return <RectangleShape {...commonProps} node={node as RectangleShapeProps} />;
@@ -180,3 +187,15 @@ const BaseShape = React.memo(({ node, id, ref }: BaseShapeProps) => {
 })
 
 export default BaseShape;
+
+function throttle(cb: (...args: any[]) => void, delay: number) {
+    let shouldWait = false;
+    return (...args: any[]) => {
+        if (shouldWait) return;
+        cb(...args);
+        shouldWait = true;
+        setTimeout(() => {
+            shouldWait = false;
+        }, delay);
+    };
+}

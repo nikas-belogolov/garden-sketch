@@ -130,7 +130,7 @@ export default function PlantsMenu({
                         <p className="text-center text-lg text-muted-foreground">No plants found for your search.</p>
                     ) : (
                         filteredPlants.map((plant) => (
-                            <div key={plant.commonName + plant.scientificName} className="inline-flex flex-col gap-1 w-10 items-center" draggable onDragStart={() => setDraggedShape(plant)}>
+                            <div key={plant.commonName + plant.scientificName} className="inline-flex flex-col gap-1 w-10 items-center" draggable onDragStart={() => setDraggedShape({...plant, type: "plant"})}>
                                 <div className="w-8 aspect-square relative">
                                     {plant.img && <Image src={`/illustrations/${plant.img}`} alt={plant.commonName} fill={true} />}
                                 </div>

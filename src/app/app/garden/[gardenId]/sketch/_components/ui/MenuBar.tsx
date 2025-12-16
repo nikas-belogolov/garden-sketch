@@ -3,7 +3,7 @@
 import { useAtom } from "jotai";
 import { MeasurementUnit, measurementUnitAtom, snapToGridAtom } from "@/app/app/garden/[gardenId]/common";
 import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarGroup, MenubarItem, MenubarLabel, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarTrigger } from "@/components/ui/menubar";
-import { useGarden } from "@/lib/stores/GardenContext";
+import { useGarden } from "@/lib/context/GardenContext";
 import { Input } from "@/components/ui/input";
 import { useY } from "react-yjs";
 import { Button } from "@/components/ui/button";
@@ -94,7 +94,7 @@ export default function MenuBar() {
                     </MenubarContent>
                 </MenubarMenu>
 
-                {/* <Button onClick={handleSignout}>Sign out</Button> */}
+                <Button onClick={handleSignout}>Sign out</Button>
                 {/* <GardenName /> */}
 
                 {/* <Input defaultValue={name} /> */}

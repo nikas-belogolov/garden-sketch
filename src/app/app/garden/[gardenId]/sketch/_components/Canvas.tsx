@@ -1,18 +1,20 @@
 'use client';
 
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
-import React, { DragEventHandler, useCallback, useEffect, useRef } from "react";
+import React, { DragEventHandler, MouseEvent, useCallback, useEffect, useRef } from "react";
 import { Layer, Stage, Transformer } from "react-konva";
 import { contextMenuIsVisibleAtom, currentDraggedObject, currentShapeBoundBoxAtom, selectedIdsAtom, stageDraggabilityAtom, stagePosititionAtom, stageScaleAtom, stageSizeAtom } from "@/lib/stores/gardenLayoutAtoms";
 import InfiniteGrid from "./InfiniteGrid";
 
+import { WebsocketProvider } from 'y-websocket'
+
 import Konva from "konva"
-import { imperialToPixels, MAX_SCALE, MeasurementUnit, measurementUnitAtom, metricToPixels, MIN_SCALE, ShapeProps, snapToGridAtom } from "../../common";
+import { imperialToPixels, MAX_SCALE, MeasurementUnit, measurementUnitAtom, metricToPixels, MIN_SCALE, Shape, snapToGridAtom } from "../../common";
 import PlantShape from "./shapes/PlantShape";
 import TreeShape from "./shapes/TreeShape";
 import { Portal } from "react-konva-utils";
 import BushShape from "./shapes/BushShape";
-import { useGarden } from "@/lib/stores/GardenContext";
+import { useGarden } from "@/lib/context/GardenContext";
 
 import * as Y from "yjs"
 import { useY } from "react-yjs";
@@ -20,10 +22,12 @@ import BaseShape from "./shapes/BaseShape";
 import { nanoid } from 'nanoid'
 import { KonvaEventObject } from "konva/lib/Node";
 import { ContextMenu } from "./ui/ContextMenu";
+import Cursors from "./Cursors";
+import { useAuth } from "@/lib/context/AuthContext";
 
 export default function Canvas() {
-
-    const { ydoc, objectsMap, undoManager } = useGarden()
+    const { user } = useAuth()
+    const { ydoc, objectsMap, undoManager, awareness } = useGarden()
 
     /* STAGE */
     const [stagePosition, setStagePosition] = useAtom(stagePosititionAtom)
@@ -41,6 +45,19 @@ export default function Canvas() {
     const shapesRef = useRef(new Map())
     const currentDraggedObjectValue = useAtomValue(currentDraggedObject)
     const [selectedIds, setSelectedIds] = useAtom(selectedIdsAtom)
+
+    useEffect(() => {
+
+        awareness?.setLocalStateField("user", {
+            name: user?.name.split(" ")[0],
+            color: '#000',
+        })
+
+        awareness?.setLocalStateField("cursor", {
+            x: stagePosition.x,
+            y: stagePosition.y,
+        })
+    }, [user, awareness])
 
     const handleKeyDown = useCallback((e: KeyboardEvent | React.KeyboardEvent) => {
         if (e.key == "Delete") {
@@ -127,17 +144,17 @@ export default function Canvas() {
         // Run once on mount
         resizeStage();
 
-        const handleWindowClick = (e: MouseEvent) => {
+        // const handleWindowClick = (e: MouseEvent) => {
             // if (e.)
             // setContextMenuVisibility(false);
-        };
+        // };
 
-        window.addEventListener('click', handleWindowClick);
+        // window.addEventListener('click', handleWindowClick);
         window.addEventListener('keydown', handleKeyDown);
         window.addEventListener('resize', resizeStage);
 
         return () => {
-            window.removeEventListener('click', handleWindowClick);
+            // window.removeEventListener('click', handleWindowClick);
             window.removeEventListener('keydown', handleKeyDown);
             window.removeEventListener('resize', resizeStage);
         };
@@ -203,11 +220,16 @@ export default function Canvas() {
                 shape.set("w", 100);
                 shape.set("h", 100);
                 shape.set("scale", { x: 1, y: 1 })
-                shape.set("img", currentDraggedObjectValue.img)
-                shape.set("commonName", currentDraggedObjectValue.commonName)
-                shape.set("rowSpacing", currentDraggedObjectValue.rowSpacing);
-                shape.set("plantSpacing", currentDraggedObjectValue.plantSpacing);
-                shape.set("type", "plant")
+
+                if (currentDraggedObjectValue.type === "plant") {
+                    shape.set("img", currentDraggedObjectValue.img)
+                    shape.set("commonName", currentDraggedObjectValue.commonName)
+                    shape.set("rowSpacing", currentDraggedObjectValue.rowSpacing);
+                    shape.set("plantSpacing", currentDraggedObjectValue.plantSpacing);
+                    shape.set("type", "plant")
+                }
+
+                console.log(currentDraggedObjectValue)
 
                 objectsMap.set(nanoid(), shape as any)
             })
@@ -230,14 +252,7 @@ export default function Canvas() {
         });
     }, [objects]);
 
-    const handleStageClick = (e: KonvaEventObject<MouseEvent>) => {
-        setContextMenuVisibility(false)
 
-        if (e.target === e.target.getStage()) {
-            setSelectedIds([]);
-            return;
-        }
-    }
 
     useEffect(() => {
         if (!transformerRef.current) return;
@@ -258,6 +273,13 @@ export default function Canvas() {
             onDragOver={(e) => e.preventDefault()}
             onKeyDown={handleKeyDown}
             className="h-screen w-screen overflow-hidden bg-background"
+
+            onMouseMove={(e) => {
+                if (!stageRef.current || !awareness) return;
+
+                awareness.setLocalStateField("cursor", stageRef.current.getRelativePointerPosition()!);
+            }}
+
         >
             <Stage
                 ref={stageRef}
@@ -273,11 +295,19 @@ export default function Canvas() {
                 onDragMove={handleDragMove}
 
                 onWheel={handleWheel}
-                onClick={handleStageClick}
+                onClick={(e) => {
+                    setContextMenuVisibility(false)
+
+                    if (e.target === e.target.getStage()) {
+                        setSelectedIds([]);
+                    }
+                }}
+                
 
             >
 
                 <Layer name="below-grid"></Layer>
+
                 <InfiniteGrid />
 
 
@@ -300,6 +330,9 @@ export default function Canvas() {
                     <Transformer
                         keepRatio={false}
                         ref={transformerRef}
+                        rotationSnaps={[0, 45, 90, 135, 180, 225, 270, 315]}
+                        rotationSnapTolerance={5}
+                        rotateAnchorOffset={30}
                         // anchorStyleFunc={(anchor) => {
 
                         // }}
@@ -358,7 +391,9 @@ export default function Canvas() {
                     />
                 </Layer>
 
-                <Layer name="top"></Layer>
+                <Layer name="drag" ref={dragLayerRef} />
+
+                <Cursors />
             </Stage>
 
             <ContextMenu />

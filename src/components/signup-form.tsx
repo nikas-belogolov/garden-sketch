@@ -16,20 +16,18 @@ import { authClient } from "@/lib/auth/auth-client"; //import the auth client
 
 import { FormEvent, useState } from "react"
 import { redirect, useRouter } from "next/navigation"
+import { useAuth } from "@/lib/context/AuthContext";
 
 export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null)
+
   const router = useRouter();
+  const { register, error, isLoading } = useAuth();
 
   async function handleSignUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
-    setError(null);
-    setIsLoading(true);
 
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email")?.toString().trim();
@@ -37,36 +35,15 @@ export function SignupForm({
     const password = formData.get("password")?.toString().trim();
     const confirmPassword = formData.get("confirm-password")?.toString().trim();
 
-    if (!email || !name || !password || !confirmPassword) {
-      setError("Please fill in all fields.")
-      setIsLoading(false);
-      return;
-    }
+    await register({
+      email,
+      password,
+      name,
+      confirmPassword
+    })
 
-    if (password != confirmPassword) {
-      setError("Passwords do not match. Please confirm your password.");
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      
-      const { error } = await authClient.signUp.email({
-        email,
-        password,
-        name,
-      });
-
-      if (error) {
-        throw new Error(error.message || "Signup failed. Please try again.")
-      }
-
+    if (error == null)
       router.push("/app/garden/123/sketch");
-    } catch (err: any) {
-      setError(err.message ?? "An unexpected error occurred.")
-    } finally {
-      setIsLoading(false);
-    }
   }
 
   return (
@@ -109,7 +86,7 @@ export function SignupForm({
         </Field>
         <Field>
           <Button type="submit" disabled={isLoading}>Create Account</Button>
-          <p className="text-red-500">{error}</p>
+          <p className="text-red-500">{error?.message}</p>
         </Field>
         {/* <FieldSeparator>Or continue with</FieldSeparator> */}
         <Field>

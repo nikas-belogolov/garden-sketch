@@ -24,7 +24,7 @@ export default function BottomMenu({ className }: { className?: string }) {
     ] as const;
 
     return (
-        <div className={cn("bg-sidebar border flex overflow-hidden shadow-xl", className)}>
+        <div className={"bg-sidebar border flex bottom-0 overflow-hidden shadow-xl fixed md:mx-auto md:left-0 md:right-0 md:w-9/12 lg:w-8/12 md:bottom-4 md:rounded-xl  w-dvw  h-[180px]"}>
             <div className="w-14 border-r flex flex-col items-center py-2 gap-2 bg-muted/30 shrink-0">
                 <TooltipProvider delayDuration={0}>
                     {/* <ScrollArea> */}

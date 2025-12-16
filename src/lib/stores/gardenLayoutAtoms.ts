@@ -1,4 +1,4 @@
-import { ObjectProps, ShapeProps } from "@/app/app/garden/[gardenId]/common";
+import { PlantShapeProps, Shape, TextShapeProps } from "@/app/app/garden/[gardenId]/common";
 import { atom } from "jotai";
 import Konva from "konva";
 
@@ -24,7 +24,7 @@ export const stageDraggabilityAtom = atom(get => {
     return true;
 })
 
-export const currentDraggedObject = atom<ObjectProps>()
+export const currentDraggedObject = atom<Shape | null>()
 
 // Konva.Shape map for transformations
 export const shapesAtom = atom(new Map())

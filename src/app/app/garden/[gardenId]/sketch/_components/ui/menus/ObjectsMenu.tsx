@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Search, Square, Circle, Hexagon, CircleDashed } from "lucide-react";
 import { useState } from "react";
-import { useGarden } from "@/lib/stores/GardenContext";
+import { useGarden } from "@/lib/context/GardenContext";
 import { ShapeType } from "@/app/app/garden/[gardenId]/common";
 import * as Y from "yjs";
 import { nanoid } from "nanoid";

@@ -24,7 +24,7 @@ export default async function Page() {
             <MenuBar />
             {/* <InfoPanel /> */}
             <HydrationBoundary state={dehydrate(queryClient)}>
-                <BottomMenu className="absolute md:mx-auto md:left-0 md:right-0 md:w-9/12 lg:w-8/12 md:bottom-4 md:rounded-xl  w-dvw  h-[180px]" />
+                <BottomMenu className="" />
             </HydrationBoundary>
         </div>
         

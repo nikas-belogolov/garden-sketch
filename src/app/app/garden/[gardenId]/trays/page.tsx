@@ -1,16 +1,14 @@
 "use client";
 
-import React, { Suspense, useEffect, useLayoutEffect, useState } from "react";
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input";
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogHeader, DialogTrigger, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
-import { RiDeleteBin2Fill, RiDeleteBin3Line } from "react-icons/ri";
-import { Empty } from "@/components/ui/empty";
-import ElementsPanel from "../sketch/_components/ui/menus/PlantsMenu";
-import PlantsMenu from "../sketch/_components/ui/menus/PlantsMenu";
+import { Label } from "@/components/ui/label";
+import { useState } from "react";
+import { RiDeleteBin2Fill } from "react-icons/ri";
+import PlantsMenu from "../sketch/_components/menus/PlantsMenu";
 
 
 /*

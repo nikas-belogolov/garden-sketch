@@ -1,6 +1,6 @@
 import React from 'react';
 import { Circle, Rect, Ellipse, Wedge, Line, Star, Ring, Arc, RegularPolygon, Arrow } from 'react-konva';
-import { GeometricShapeProps, ShapeType } from '../../../common';
+import { GeometricShapeProps, ShapeType } from '@/lib/garden-canvas';
 import Konva from 'konva';
 
 interface Props {

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Search, Square, Circle, Hexagon, CircleDashed } from "lucide-react";
 import { useState } from "react";
 import { useGarden } from "@/lib/context/GardenContext";
-import { ShapeType } from "@/app/app/garden/[gardenId]/common";
+import { ShapeType } from "@/lib/garden-canvas";
 import * as Y from "yjs";
 import { nanoid } from "nanoid";
 import { Button } from "@/components/ui/button";

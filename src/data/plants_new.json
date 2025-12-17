@@ -19,12 +19,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.6 cm",
-                "imperial": "0.25 in"
+                "metric": 0.6,
+                "imperial": 0.25
             },
             "spacing": {
-                "metric": "45-60 cm",
-                "imperial": "18-24 in"
+                "metric": 52.5,
+                "imperial": 21.0
             }
         },
         "sun": {
@@ -41,7 +41,33 @@
             "carbohydrates": 3.9,
             "protein": 0.9,
             "fat": 0.2
-        }
+        },
+        "goodCompanions": [
+            "Basil",
+            "Marigold",
+            "Nasturtium",
+            "Borage",
+            "Onion",
+            "Garlic",
+            "Chives",
+            "Asparagus",
+            "Carrot",
+            "Lettuce",
+            "Spinach",
+            "Bell Pepper",
+            "Bean"
+        ],
+        "badCompanions": [
+            "Potato",
+            "Cabbage",
+            "Broccoli",
+            "Cauliflower",
+            "Kale",
+            "Brussels Sprouts",
+            "Corn",
+            "Dill",
+            "Fennel"
+        ]
     },
     {
         "name": "Carrot",
@@ -63,12 +89,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.6-1.2 cm",
-                "imperial": "0.25-0.5 in"
+                "metric": 0.8999999999999999,
+                "imperial": 0.375
             },
             "spacing": {
-                "metric": "5-7 cm",
-                "imperial": "2-3 in"
+                "metric": 6.0,
+                "imperial": 2.5
             }
         },
         "sun": {
@@ -85,12 +111,33 @@
             "carbohydrates": 9.6,
             "protein": 0.9,
             "fat": 0.2
-        }
+        },
+        "goodCompanions": [
+            "Onion",
+            "Leek",
+            "Garlic",
+            "Chives",
+            "Rosemary",
+            "Sage",
+            "Oregano",
+            "Cilantro",
+            "Dill",
+            "Lettuce",
+            "Radish",
+            "Bean",
+            "Pea",
+            "Tomato"
+        ],
+        "badCompanions": [
+            "Celery",
+            "Parsnip",
+            "Fennel"
+        ]
     },
     {
         "name": "Basil",
         "species": "Ocimum basilicum",
-        "image": "",
+        "image": "basil.svg",
         "category": "Herb",
         "germination": {
             "min": 5,
@@ -107,12 +154,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.3 cm",
-                "imperial": "0.1 in"
+                "metric": 0.3,
+                "imperial": 0.1
             },
             "spacing": {
-                "metric": "25-30 cm",
-                "imperial": "10-12 in"
+                "metric": 27.5,
+                "imperial": 11.0
             }
         },
         "sun": {
@@ -129,11 +176,26 @@
             "carbohydrates": 2.7,
             "protein": 3.2,
             "fat": 0.6
-        }
+        },
+        "goodCompanions": [
+            "Tomato",
+            "Bell Pepper",
+            "Asparagus",
+            "Lettuce",
+            "Parsley",
+            "Oregano",
+            "Chamomile",
+            "Marigold",
+            "Borage"
+        ],
+        "badCompanions": [
+            "Sage",
+            "Rosemary"
+        ]
     },
     {
         "name": "Strawberry",
-        "species": "Fragaria × ananassa",
+        "species": "Fragaria \u00d7 ananassa",
         "image": "",
         "category": "Fruit",
         "germination": {
@@ -151,12 +213,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0 cm",
-                "imperial": "0 in"
+                "metric": 0.0,
+                "imperial": 0.0
             },
             "spacing": {
-                "metric": "30-45 cm",
-                "imperial": "12-18 in"
+                "metric": 37.5,
+                "imperial": 15.0
             }
         },
         "sun": {
@@ -173,7 +235,35 @@
             "carbohydrates": 7.7,
             "protein": 0.7,
             "fat": 0.3
-        }
+        },
+        "goodCompanions": [
+            "Borage",
+            "Thyme",
+            "Oregano",
+            "Chives",
+            "Sage",
+            "Cilantro",
+            "Lavender",
+            "Marigold",
+            "Spinach",
+            "Bean",
+            "Pea",
+            "Lettuce",
+            "Onion",
+            "Garlic"
+        ],
+        "badCompanions": [
+            "Tomato",
+            "Potato",
+            "Eggplant",
+            "Bell Pepper",
+            "Cabbage",
+            "Broccoli",
+            "Cauliflower",
+            "Kale",
+            "Melon",
+            "Mint"
+        ]
     },
     {
         "name": "Lavender",
@@ -195,19 +285,35 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.3 cm",
-                "imperial": "0.1 in"
+                "metric": 0.3,
+                "imperial": 0.1
             },
             "spacing": {
-                "metric": "30-60 cm",
-                "imperial": "12-24 in"
+                "metric": 45.0,
+                "imperial": 18.0
             }
         },
         "sun": {
             "min": "Full Sun",
             "max": "Full Sun"
         },
-        "soilImpact": "Light Feeder"
+        "soilImpact": "Light Feeder",
+        "goodCompanions": [
+            "Rosemary",
+            "Thyme",
+            "Sage",
+            "Oregano",
+            "Basil",
+            "Marjoram",
+            "Parsley",
+            "Rose",
+            "Yarrow"
+        ],
+        "badCompanions": [
+            "Mint",
+            "Hosta",
+            "Fern"
+        ]
     },
     {
         "name": "Oak Tree",
@@ -224,19 +330,25 @@
         },
         "planting": {
             "depth": {
-                "metric": "2.5-5 cm",
-                "imperial": "1-2 in"
+                "metric": 3.75,
+                "imperial": 1.5
             },
             "spacing": {
-                "metric": "6-12 m",
-                "imperial": "20-40 ft"
+                "metric": 900.0,
+                "imperial": 360.0
             }
         },
         "sun": {
             "min": "Full Sun",
             "max": "Full Sun"
         },
-        "soilImpact": "Soil Builder"
+        "soilImpact": "Soil Builder",
+        "goodCompanions": [
+            "Crocus",
+            "Daffodil",
+            "Hosta"
+        ],
+        "badCompanions": []
     },
     {
         "name": "Sunflower",
@@ -258,12 +370,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "2.5 cm",
-                "imperial": "1 in"
+                "metric": 2.5,
+                "imperial": 1.0
             },
             "spacing": {
-                "metric": "45-60 cm",
-                "imperial": "18-24 in"
+                "metric": 52.5,
+                "imperial": 21.0
             }
         },
         "sun": {
@@ -280,7 +392,20 @@
             "carbohydrates": 20,
             "protein": 21,
             "fat": 51
-        }
+        },
+        "goodCompanions": [
+            "Corn",
+            "Tomato",
+            "Cucumber",
+            "Melon",
+            "Squash",
+            "Lettuce",
+            "Zucchini",
+            "Pea"
+        ],
+        "badCompanions": [
+            "Potato"
+        ]
     },
     {
         "name": "Lettuce",
@@ -302,12 +427,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.3 cm",
-                "imperial": "0.125 in"
+                "metric": 0.3,
+                "imperial": 0.125
             },
             "spacing": {
-                "metric": "20-30 cm",
-                "imperial": "8-12 in"
+                "metric": 25.0,
+                "imperial": 10.0
             }
         },
         "sun": {
@@ -324,7 +449,36 @@
             "carbohydrates": 2.9,
             "protein": 1.4,
             "fat": 0.2
-        }
+        },
+        "goodCompanions": [
+            "Carrot",
+            "Beet",
+            "Radish",
+            "Parsnip",
+            "Onion",
+            "Chives",
+            "Garlic",
+            "Pea",
+            "Spinach",
+            "Cucumber",
+            "Squash",
+            "Tomato",
+            "Eggplant",
+            "Basil",
+            "Dill",
+            "Cilantro",
+            "Mint",
+            "Strawberry"
+        ],
+        "badCompanions": [
+            "Broccoli",
+            "Cabbage",
+            "Cauliflower",
+            "Kale",
+            "Brussels Sprouts",
+            "Celery",
+            "Parsley"
+        ]
     },
     {
         "name": "Blueberry",
@@ -346,12 +500,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.6 cm",
-                "imperial": "0.25 in"
+                "metric": 0.6,
+                "imperial": 0.25
             },
             "spacing": {
-                "metric": "90-120 cm",
-                "imperial": "3-4 ft"
+                "metric": 105.0,
+                "imperial": 42.0
             }
         },
         "sun": {
@@ -368,7 +522,24 @@
             "carbohydrates": 14,
             "protein": 0.7,
             "fat": 0.3
-        }
+        },
+        "goodCompanions": [
+            "Lavender",
+            "Thyme",
+            "Mint",
+            "Basil",
+            "Strawberry",
+            "Bean"
+        ],
+        "badCompanions": [
+            "Tomato",
+            "Potato",
+            "Bell Pepper",
+            "Eggplant",
+            "Cabbage",
+            "Broccoli",
+            "Cauliflower"
+        ]
     },
     {
         "name": "Rose",
@@ -385,19 +556,31 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.6 cm",
-                "imperial": "0.25 in"
+                "metric": 0.6,
+                "imperial": 0.25
             },
             "spacing": {
-                "metric": "60-90 cm",
-                "imperial": "24-36 in"
+                "metric": 75.0,
+                "imperial": 30.0
             }
         },
         "sun": {
             "min": "Full Sun",
             "max": "Full Sun"
         },
-        "soilImpact": "Heavy Feeder"
+        "soilImpact": "Heavy Feeder",
+        "goodCompanions": [
+            "Lavender",
+            "Chives",
+            "Garlic",
+            "Onion",
+            "Oregano",
+            "Mint",
+            "Yarrow",
+            "Marigold",
+            "Parsley"
+        ],
+        "badCompanions": []
     },
     {
         "name": "Potato",
@@ -419,12 +602,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "7-10 cm",
-                "imperial": "3-4 in"
+                "metric": 8.5,
+                "imperial": 3.5
             },
             "spacing": {
-                "metric": "30 cm",
-                "imperial": "12 in"
+                "metric": 30.0,
+                "imperial": 12.0
             }
         },
         "sun": {
@@ -441,7 +624,32 @@
             "carbohydrates": 17,
             "protein": 2,
             "fat": 0.1
-        }
+        },
+        "goodCompanions": [
+            "Bean",
+            "Cabbage",
+            "Broccoli",
+            "Cauliflower",
+            "Corn",
+            "Lettuce",
+            "Radish",
+            "Spinach",
+            "Basil",
+            "Cilantro",
+            "Chamomile",
+            "Marigold",
+            "Nasturtium"
+        ],
+        "badCompanions": [
+            "Tomato",
+            "Bell Pepper",
+            "Eggplant",
+            "Cucumber",
+            "Pumpkin",
+            "Squash",
+            "Sunflower",
+            "Raspberry"
+        ]
     },
     {
         "name": "Apple Tree",
@@ -463,12 +671,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "Tree root ball depth",
-                "imperial": "Tree root ball depth"
+                "metric": 0,
+                "imperial": 0
             },
             "spacing": {
-                "metric": "4-6 m",
-                "imperial": "13-20 ft"
+                "metric": 500.0,
+                "imperial": 198.0
             }
         },
         "sun": {
@@ -485,7 +693,20 @@
             "carbohydrates": 14,
             "protein": 0.3,
             "fat": 0.2
-        }
+        },
+        "goodCompanions": [
+            "Basil",
+            "Chamomile",
+            "Chives",
+            "Fennel",
+            "Mint",
+            "Yarrow",
+            "Marigold",
+            "Strawberry"
+        ],
+        "badCompanions": [
+            "Potato"
+        ]
     },
     {
         "name": "Mint",
@@ -507,12 +728,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.3 cm",
-                "imperial": "0.1 in"
+                "metric": 0.3,
+                "imperial": 0.1
             },
             "spacing": {
-                "metric": "45-60 cm",
-                "imperial": "18-24 in"
+                "metric": 52.5,
+                "imperial": 21.0
             }
         },
         "sun": {
@@ -529,7 +750,26 @@
             "carbohydrates": 15,
             "protein": 3.8,
             "fat": 0.9
-        }
+        },
+        "goodCompanions": [
+            "Beet",
+            "Broccoli",
+            "Cabbage",
+            "Carrot",
+            "Eggplant",
+            "Kale",
+            "Lettuce",
+            "Onion",
+            "Pea",
+            "Potato",
+            "Radish",
+            "Squash",
+            "Tomato"
+        ],
+        "badCompanions": [
+            "Chamomile",
+            "Parsley"
+        ]
     },
     {
         "name": "Cucumber",
@@ -551,12 +791,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "2.5 cm",
-                "imperial": "1 in"
+                "metric": 2.5,
+                "imperial": 1.0
             },
             "spacing": {
-                "metric": "30-45 cm",
-                "imperial": "12-18 in"
+                "metric": 37.5,
+                "imperial": 15.0
             }
         },
         "sun": {
@@ -573,7 +813,24 @@
             "carbohydrates": 3.6,
             "protein": 0.7,
             "fat": 0.1
-        }
+        },
+        "goodCompanions": [
+            "Bean",
+            "Corn",
+            "Dill",
+            "Lettuce",
+            "Onion",
+            "Pea",
+            "Radish",
+            "Sunflower",
+            "Nasturtium",
+            "Marigold"
+        ],
+        "badCompanions": [
+            "Potato",
+            "Sage",
+            "Melon"
+        ]
     },
     {
         "name": "Bell Pepper",
@@ -595,12 +852,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "0.6 cm",
-                "imperial": "0.25 in"
+                "metric": 0.6,
+                "imperial": 0.25
             },
             "spacing": {
-                "metric": "30-45 cm",
-                "imperial": "12-18 in"
+                "metric": 37.5,
+                "imperial": 15.0
             }
         },
         "sun": {
@@ -617,7 +874,33 @@
             "carbohydrates": 6,
             "protein": 1,
             "fat": 0.3
-        }
+        },
+        "goodCompanions": [
+            "Carrot",
+            "Cucumber",
+            "Lettuce",
+            "Onion",
+            "Pea",
+            "Tomato",
+            "Basil",
+            "Cilantro",
+            "Dill",
+            "Garlic",
+            "Marjoram",
+            "Oregano",
+            "Parsley",
+            "Rosemary",
+            "Marigold",
+            "Nasturtium"
+        ],
+        "badCompanions": [
+            "Bean",
+            "Broccoli",
+            "Cabbage",
+            "Cauliflower",
+            "Kale",
+            "Fennel"
+        ]
     },
     {
         "name": "Spinach",
@@ -639,12 +922,12 @@
         },
         "planting": {
             "depth": {
-                "metric": "1.2 cm",
-                "imperial": "0.5 in"
+                "metric": 1.2,
+                "imperial": 0.5
             },
             "spacing": {
-                "metric": "10-15 cm",
-                "imperial": "4-6 in"
+                "metric": 12.5,
+                "imperial": 5.0
             }
         },
         "sun": {
@@ -661,7 +944,28 @@
             "carbohydrates": 3.6,
             "protein": 2.9,
             "fat": 0.4
-        }
+        },
+        "goodCompanions": [
+            "Broccoli",
+            "Cabbage",
+            "Carrot",
+            "Cauliflower",
+            "Chives",
+            "Kale",
+            "Lettuce",
+            "Onion",
+            "Pea",
+            "Radish",
+            "Strawberry",
+            "Basil",
+            "Cilantro",
+            "Dill",
+            "Garlic",
+            "Mint"
+        ],
+        "badCompanions": [
+            "Potato"
+        ]
     },
     {
         "name": "Tulip",
@@ -678,19 +982,26 @@
         },
         "planting": {
             "depth": {
-                "metric": "15-20 cm",
-                "imperial": "6-8 in"
+                "metric": 17.5,
+                "imperial": 7.0
             },
             "spacing": {
-                "metric": "10-15 cm",
-                "imperial": "4-6 in"
+                "metric": 12.5,
+                "imperial": 5.0
             }
         },
         "sun": {
             "min": "Full Sun",
             "max": "Full Sun"
         },
-        "soilImpact": "Moderate Feeder"
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [
+            "Daffodil",
+            "Crocus",
+            "Hosta",
+            "Marigold"
+        ],
+        "badCompanions": []
     },
     {
         "name": "Maple Tree",
@@ -707,19 +1018,26 @@
         },
         "planting": {
             "depth": {
-                "metric": "Tree root ball depth",
-                "imperial": "Tree root ball depth"
+                "metric": 0,
+                "imperial": 0
             },
             "spacing": {
-                "metric": "9-15 m",
-                "imperial": "30-50 ft"
+                "metric": 1200.0,
+                "imperial": 480.0
             }
         },
         "sun": {
             "min": "Partial Shade",
             "max": "Full Sun"
         },
-        "soilImpact": "Soil Builder"
+        "soilImpact": "Soil Builder",
+        "goodCompanions": [
+            "Hosta",
+            "Fern",
+            "Daffodil",
+            "Tulip"
+        ],
+        "badCompanions": []
     },
     {
         "name": "Fern",
@@ -736,18 +1054,1625 @@
         },
         "planting": {
             "depth": {
-                "metric": "Surface",
-                "imperial": "Surface"
+                "metric": 0,
+                "imperial": 0
             },
             "spacing": {
-                "metric": "30-60 cm",
-                "imperial": "12-24 in"
+                "metric": 45.0,
+                "imperial": 18.0
             }
         },
         "sun": {
             "min": "Shade",
             "max": "Partial Shade"
         },
-        "soilImpact": "Soil Builder"
+        "soilImpact": "Soil Builder",
+        "goodCompanions": [
+            "Hosta"
+        ],
+        "badCompanions": [
+            "Lavender",
+            "Rosemary"
+        ]
+    },
+    {
+        "name": "Onion",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Cabbage",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Broccoli",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Pea",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Garlic",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Chives",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Bean",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Cauliflower",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Kale",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Dill",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Oregano",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Cilantro",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Radish",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Parsley",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Rosemary",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Sage",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Eggplant",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Corn",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Fennel",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Chamomile",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Squash",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Borage",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Thyme",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Melon",
+        "species": "Unknown",
+        "image": "",
+        "category": "Fruit",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Yarrow",
+        "species": "Unknown",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Daffodil",
+        "species": "Unknown",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Asparagus",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Brussels Sprouts",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Celery",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Parsnip",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Marjoram",
+        "species": "Unknown",
+        "image": "",
+        "category": "Herb",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Crocus",
+        "species": "Unknown",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Beet",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Leek",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Zucchini",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Pumpkin",
+        "species": "Unknown",
+        "image": "",
+        "category": "Vegetable",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Raspberry",
+        "species": "Unknown",
+        "image": "",
+        "category": "Bush",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Marigold",
+        "species": "Unknown",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Nasturtium",
+        "species": "Unknown",
+        "image": "",
+        "category": "Flower",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
+    },
+    {
+        "name": "Hosta",
+        "species": "Unknown",
+        "image": "",
+        "category": "Bush",
+        "germination": {
+            "min": 0,
+            "max": 0
+        },
+        "hardinessZone": {
+            "min": 0,
+            "max": 0
+        },
+        "harvest": {
+            "min": 0,
+            "max": 0,
+            "unit": "days"
+        },
+        "planting": {
+            "depth": {
+                "metric": 0,
+                "imperial": 0
+            },
+            "spacing": {
+                "metric": 0,
+                "imperial": 0
+            }
+        },
+        "sun": {
+            "min": "Full Sun",
+            "max": "Full Sun"
+        },
+        "yield": {
+            "amount": 0,
+            "unit": "kg/m2"
+        },
+        "soilImpact": "Moderate Feeder",
+        "goodCompanions": [],
+        "badCompanions": []
     }
 ]

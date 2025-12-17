@@ -1,8 +1,7 @@
 'use server';
 
-import { PlantProps } from '@/app/app/garden/[gardenId]/common';
-import plants from '@/data/plants.json';
+import plants from '@/data/plants_new.json';
 
-export async function getPlants(): Promise<PlantProps[]> {
+export async function getPlants(): Promise<typeof plants> {
     return plants;
 }

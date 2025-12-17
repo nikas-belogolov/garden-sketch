@@ -2,15 +2,13 @@ import Konva from "konva";
 import { Group, KonvaNodeEvents, Label, Shape, Tag } from "react-konva";
 import { Ref, useCallback, useEffect, useRef, useState } from "react";
 import { useImage } from "react-konva-utils";
-import { metricToPixels, PlantShapeProps } from "../../../common";
+import { metricToPixels, PlantShapeProps } from "@/lib/garden-canvas";
 import { useGarden } from "@/lib/context/GardenContext";
 
 interface PlantShapeComponentProps extends Konva.ShapeConfig, KonvaNodeEvents {
     node: PlantShapeProps,
     setLabelText: (label: string) => void,
-    // id: string,
     ref: Ref<Konva.Shape>,
-
 }
 
 export default function PlantShape({
@@ -65,7 +63,7 @@ export default function PlantShape({
     useEffect(() => {
         const plantsInRow = Math.max(1, Math.floor(node.w / node.plantSpacing));
         const plantsInColumn = Math.max(1, Math.floor(node.h / node.rowSpacing));
-        setLabelText(`${node.commonName} ${plantsInRow}x${plantsInColumn}`)
+        setLabelText(`${node.commonName} ${plantsInRow}x${plantsInColumn} (${plantsInRow * plantsInColumn} Total)`)
     }, [node.commonName, node.plantSpacing, node.rowSpacing, node.w, node.h]);
 
     const hitFunc = (ctx: Konva.Context, shape: Konva.Shape) => {
@@ -83,6 +81,8 @@ export default function PlantShape({
 
             sceneFunc={sceneFunc}
             hitFunc={hitFunc}
+
+            onTransformEnd={({ target }) => target.cache()}
 
             ref={ref}
             {...props}

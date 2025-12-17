@@ -1,12 +1,14 @@
-import Canvas from "./_components/Canvas";
-import BottomMenu from "./_components/ui/BottomMenu";
-import ToolBar from "./_components/ui/ToolBar";
-import MenuBar from "./_components/ui/MenuBar";
-import CanvasLazyLoader from "./_components/CanvasLazyLoader";
-import { getPlants } from "@/lib/actions";
 import { getQueryClient } from "@/app/get-query-client";
+import { getPlants } from "@/lib/actions";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import InfoPanel from "./_components/ui/InfoPanel";
+import CanvasLazyLoader from "./_canvas/CanvasLazyLoader";
+import BottomMenu from "./_components/BottomMenu";
+import MenuBar from "./_components/MenuBar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Garden Sketch",
+}
 
 export default async function Page() {
 
@@ -27,6 +29,6 @@ export default async function Page() {
                 <BottomMenu className="" />
             </HydrationBoundary>
         </div>
-        
+
     )
 }

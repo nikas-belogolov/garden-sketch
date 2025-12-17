@@ -1,5 +1,5 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
-import { contextMenuIsVisibleAtom, contextMenuPositionAtom } from "@/lib/stores/gardenLayoutAtoms"
+import { contextMenuIsVisibleAtom, contextMenuPositionAtom } from "@/lib/garden-canvas"
 import { useAtom, useAtomValue } from "jotai"
 import { useEffect, useRef } from "react";
 

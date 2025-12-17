@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Toggle } from "@/components/ui/toggle";
 import useDebounce from "@/lib/hooks/debounce";
 import { getPlants } from "@/lib/actions";
-import { currentDraggedObject } from "@/lib/stores/gardenLayoutAtoms";
+import { currentDraggedObject } from "@/lib/garden-canvas";
 import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { useAtom, useSetAtom } from "jotai";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
@@ -51,16 +51,22 @@ export default function PlantsMenu({
         startTransition(() => {
             const fuse = new Fuse(data, {
                 threshold: 0.3,
-                keys: companionMode ? ["goodCompanions"] : ['commonName', 'scientificName'],
+                keys: companionMode ? ["goodCompanions"] : ['name', 'species'],
+                
             })
 
             const results = debouncedSearchQuery.trim() == "" ? data : fuse.search(debouncedSearchQuery).map(result => result.item);
 
-            const newFilteredPlants = results.filter(plant =>
-                (selectedCategory === "all" || plant.category === selectedCategory) &&
-                (selectedSunlightRequirement === "any-light" ||
-                    plant.sunlightRequirements.includes(selectedSunlightRequirement))
-            )
+            const newFilteredPlants = results.filter(plant => {
+
+                const categoryMatches = selectedCategory === "all" || plant.category.toLowerCase() === selectedCategory
+
+                const sunMatches = selectedSunlightRequirement === "any-light" ||
+                    plant.sun.min.toLowerCase().replace(" ", "-").includes(selectedSunlightRequirement) ||
+                    plant.sun.max.toLowerCase().replace(" ", "-").includes(selectedSunlightRequirement)
+
+                return categoryMatches && sunMatches;
+            })
 
             setFilteredPlants(newFilteredPlants);
             setFilteredPlantsCount(newFilteredPlants.length)
@@ -112,7 +118,7 @@ export default function PlantsMenu({
                         <SelectContent>
                             <SelectItem value="any-light">Any Light</SelectItem>
                             <SelectItem value="full-sun">Full Sun</SelectItem>
-                            <SelectItem value="partial-sun">Partial Sun</SelectItem>
+                            <SelectItem value="partial-shade">Partial Shade</SelectItem>
                             <SelectItem value="shade">Shade</SelectItem>
                         </SelectContent>
                     </Select>
@@ -130,11 +136,11 @@ export default function PlantsMenu({
                         <p className="text-center text-lg text-muted-foreground">No plants found for your search.</p>
                     ) : (
                         filteredPlants.map((plant) => (
-                            <div key={plant.commonName + plant.scientificName} className="inline-flex flex-col gap-1 w-10 items-center" draggable onDragStart={() => setDraggedShape({...plant, type: "plant"})}>
+                            <div key={plant.name + plant.species} className="inline-flex flex-col gap-1  items-center" draggable onDragStart={() => setDraggedShape({...plant, type: "plant"})}>
                                 <div className="w-8 aspect-square relative">
-                                    {plant.img && <Image src={`/illustrations/${plant.img}`} alt={plant.commonName} fill={true} />}
+                                    {plant.image && <Image src={`/illustrations/${plant.image}`} alt={plant.name} fill={true} />}
                                 </div>
-                                <p className="text-center mt-2 text-muted-foreground text-xs">{plant.commonName}</p>
+                                <p className="text-center mt-2 text-muted-foreground text-xs">{plant.name}</p>
                             </div>
                         ))
                     )}

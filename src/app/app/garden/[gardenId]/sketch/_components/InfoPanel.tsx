@@ -1,7 +1,7 @@
 'use client';
 
 import { useAtom, useAtomValue } from "jotai";
-import { selectedIdsAtom } from "@/lib/stores/gardenLayoutAtoms";
+import { selectedIdsAtom } from "@/lib/garden-canvas";
 import { useGarden } from "@/lib/context/GardenContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,7 @@ import * as Y from "yjs";
 
 import { nanoid } from "nanoid";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { isInfoPanelOpenAtom } from "../../../common";
+import { isInfoPanelOpenAtom } from "@/lib/garden-canvas";
 
 export default function InfoPanel() {
     const selectedIds = useAtomValue(selectedIdsAtom);

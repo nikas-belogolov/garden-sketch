@@ -1,7 +1,7 @@
 'use client';
 
 import { useAtom } from "jotai";
-import { MeasurementUnit, measurementUnitAtom, snapToGridAtom } from "@/app/app/garden/[gardenId]/common";
+import { MeasurementUnit, measurementUnitAtom, snapToGridAtom } from "@/lib/garden-canvas";
 import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarGroup, MenubarItem, MenubarLabel, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarTrigger } from "@/components/ui/menubar";
 import { useGarden } from "@/lib/context/GardenContext";
 import { Input } from "@/components/ui/input";

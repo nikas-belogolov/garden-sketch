@@ -2,9 +2,8 @@
 
 import { JSX, useMemo } from "react";
 import { Layer, Line } from "react-konva";
-import { imperialToPixels, MeasurementUnit, measurementUnitAtom, metricToPixels, perUnitStyles, PIXELS_PER_METER } from "../../common";
 import { useAtomValue } from "jotai";
-import { stagePosititionAtom, stageScaleAtom } from "@/lib/stores/gardenLayoutAtoms";
+import { stagePosititionAtom, stageScaleAtom, imperialToPixels, MeasurementUnit, measurementUnitAtom, metricToPixels, perUnitStyles, PIXELS_PER_METER } from "@/lib/garden-canvas";
 
 export default function InfiniteGrid() {
 

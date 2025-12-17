@@ -1,29 +1,23 @@
 'use client';
 
+import { contextMenuIsVisibleAtom, currentDraggedObject, measurementUnitAtom, selectedIdsAtom, shapeAtomFamily, stageDraggabilityAtom, stagePosititionAtom, stageScaleAtom, stageSizeAtom, toPixels } from "@/lib/garden-canvas";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
-import React, { DragEventHandler, MouseEvent, useCallback, useEffect, useRef } from "react";
-import { Layer, Stage, Transformer } from "react-konva";
-import { contextMenuIsVisibleAtom, currentDraggedObject, currentShapeBoundBoxAtom, selectedIdsAtom, stageDraggabilityAtom, stagePosititionAtom, stageScaleAtom, stageSizeAtom } from "@/lib/stores/gardenLayoutAtoms";
+import React, { DragEventHandler, useCallback, useEffect, useRef } from "react";
+import { Layer, Stage } from "react-konva";
 import InfiniteGrid from "./InfiniteGrid";
 
-import { WebsocketProvider } from 'y-websocket'
-
-import Konva from "konva"
-import { imperialToPixels, MAX_SCALE, MeasurementUnit, measurementUnitAtom, metricToPixels, MIN_SCALE, Shape, snapToGridAtom } from "../../common";
-import PlantShape from "./shapes/PlantShape";
-import TreeShape from "./shapes/TreeShape";
-import { Portal } from "react-konva-utils";
-import BushShape from "./shapes/BushShape";
 import { useGarden } from "@/lib/context/GardenContext";
+import { MAX_SCALE, MIN_SCALE, snapToGridAtom } from "@/lib/garden-canvas";
+import Konva from "konva";
 
-import * as Y from "yjs"
-import { useY } from "react-yjs";
-import BaseShape from "./shapes/BaseShape";
-import { nanoid } from 'nanoid'
-import { KonvaEventObject } from "konva/lib/Node";
-import { ContextMenu } from "./ui/ContextMenu";
-import Cursors from "./Cursors";
 import { useAuth } from "@/lib/context/AuthContext";
+import { nanoid } from 'nanoid';
+import { useY } from "react-yjs";
+import * as Y from "yjs";
+import { ContextMenu } from "../_components/ContextMenu";
+import Cursors from "./Cursors";
+import BaseShape from "./shapes/BaseShape";
+import ShapeTransformer from "./Transformer";
 
 export default function Canvas() {
     const { user } = useAuth()
@@ -36,13 +30,12 @@ export default function Canvas() {
     const stageDraggability = useAtomValue(stageDraggabilityAtom)
     const stageRef = useRef<Konva.Stage>(null);
 
-    const currentShapeBoundBox = useAtomValue(currentShapeBoundBoxAtom);
 
     /* LOCAL PREFERENCES */
-    const measurementUnit = useAtomValue(measurementUnitAtom)
     const [snapToGrid, setSnapToGrid] = useAtom(snapToGridAtom)
+    const measurementUnit = useAtomValue(measurementUnitAtom)
 
-    const shapesRef = useRef(new Map())
+    // const shapesRef = useRef(new Map())
     const currentDraggedObjectValue = useAtomValue(currentDraggedObject)
     const [selectedIds, setSelectedIds] = useAtom(selectedIdsAtom)
 
@@ -75,11 +68,7 @@ export default function Canvas() {
         }
         else if (e.ctrlKey && e.key == "g") {
             e.preventDefault()
-            console.log(snapToGrid)
-            console.log(!snapToGrid)
-
             setSnapToGrid(!snapToGrid);
-
         }
         else if (e.ctrlKey && e.key === "z") {
             e.preventDefault();
@@ -145,8 +134,8 @@ export default function Canvas() {
         resizeStage();
 
         // const handleWindowClick = (e: MouseEvent) => {
-            // if (e.)
-            // setContextMenuVisibility(false);
+        // if (e.)
+        // setContextMenuVisibility(false);
         // };
 
         // window.addEventListener('click', handleWindowClick);
@@ -220,16 +209,15 @@ export default function Canvas() {
                 shape.set("w", 100);
                 shape.set("h", 100);
                 shape.set("scale", { x: 1, y: 1 })
+                shape.set("rotation", 0)
 
                 if (currentDraggedObjectValue.type === "plant") {
-                    shape.set("img", currentDraggedObjectValue.img)
-                    shape.set("commonName", currentDraggedObjectValue.commonName)
-                    shape.set("rowSpacing", currentDraggedObjectValue.rowSpacing);
-                    shape.set("plantSpacing", currentDraggedObjectValue.plantSpacing);
+                    shape.set("img", currentDraggedObjectValue.image)
+                    shape.set("commonName", currentDraggedObjectValue.name)
+                    shape.set("rowSpacing", toPixels(currentDraggedObjectValue.planting.spacing.metric, measurementUnit));
+                    shape.set("plantSpacing", toPixels(currentDraggedObjectValue.planting.spacing.metric, measurementUnit));
                     shape.set("type", "plant")
                 }
-
-                console.log(currentDraggedObjectValue)
 
                 objectsMap.set(nanoid(), shape as any)
             })
@@ -237,35 +225,21 @@ export default function Canvas() {
     }
 
     const objects = useY(objectsMap)
-    const transformerRef = useRef<Konva.Transformer>(null);
-
+    // const transformerRef = useRef<Konva.Transformer>(null);
     // Clean up shapesRef when objects are deleted
     useEffect(() => {
         const currentIds = new Set(Object.keys(objects));
-        const refIds = Array.from(shapesRef.current.keys());
+        // const refIds = Array.from(shapeAtomFamily.keys());
 
         // Remove refs for deleted objects
-        refIds.forEach(id => {
+        for (const id of shapeAtomFamily.getParams()) {
             if (!currentIds.has(id)) {
-                shapesRef.current.delete(id);
+                shapeAtomFamily.remove(id);
             }
-        });
+        }
     }, [objects]);
 
 
-
-    useEffect(() => {
-        if (!transformerRef.current) return;
-
-        if (selectedIds.length) {
-            const nodes = selectedIds
-                .map(id => shapesRef.current.get(id))
-                .filter(node => node);
-            transformerRef.current.nodes(nodes);
-        } else {
-            transformerRef.current.nodes([]);
-        }
-    }, [selectedIds])
 
     return (
         <div
@@ -302,7 +276,7 @@ export default function Canvas() {
                         setSelectedIds([]);
                     }
                 }}
-                
+
 
             >
 
@@ -318,82 +292,23 @@ export default function Canvas() {
                                 key={id}
                                 node={node}
                                 id={id}
-                                ref={(node) => {
-                                    if (node) {
-                                        shapesRef.current.set(id, node)
-                                    }
-                                }}
+                            // ref={(node) => {
+                            // if (node) {
+                            //     const setShape = useSetAtom(shapeAtomFamily(id))
+                            //     setShape(node)
+                            // }
+                            // }}
                             />
                         ))
                     }
 
-                    <Transformer
-                        keepRatio={false}
-                        ref={transformerRef}
-                        rotationSnaps={[0, 45, 90, 135, 180, 225, 270, 315]}
-                        rotationSnapTolerance={5}
-                        rotateAnchorOffset={30}
-                        // anchorStyleFunc={(anchor) => {
-
-                        // }}
-                        boundBoxFunc={(oldBox, newBox) => {
-                            if (!currentShapeBoundBox) return newBox;
-
-                            const { width: minWidth, height: minHeight } = currentShapeBoundBox;
-
-                            return {
-                                width: Math.max(minWidth * stageScale, newBox.width),
-                                height: Math.max(minHeight * stageScale, newBox.height),
-                                rotation: newBox.rotation,
-                                x: newBox.width < minWidth * stageScale ? oldBox.x : newBox.x,
-                                y: newBox.height < minHeight * stageScale ? oldBox.y : newBox.y,
-                            };
-                        }}
-
-                        anchorDragBoundFunc={(oldPos, newPos) => {
-                            if (!snapToGrid) return newPos;
-
-                            // Snap to grid when close to grid lines
-                            const gridSize = (
-                                measurementUnit == MeasurementUnit.Metric ?
-                                    metricToPixels(0.5) : // 50px (half-meter)
-                                    imperialToPixels(1) // 1 feet
-                            ) * stageScale;
-                            const snapThreshold = 10; // Snap when within 10px of a grid line
-
-                            // Convert to stage-relative coordinates
-                            const relativeX = newPos.x - stagePosition.x;
-                            const relativeY = newPos.y - stagePosition.y;
-
-                            // Calculate remainder (distance from previous grid line)
-                            const remainderX = relativeX % gridSize;
-                            const remainderY = relativeY % gridSize;
-
-                            // Distance to nearest grid line (could be before or after)
-                            const distToNearestX = Math.min(Math.abs(remainderX), Math.abs(gridSize - remainderX));
-                            const distToNearestY = Math.min(Math.abs(remainderY), Math.abs(gridSize - remainderY));
-
-                            // Snap to nearest grid line if within threshold
-                            const snappedRelativeX = distToNearestX < snapThreshold
-                                ? Math.round(relativeX / gridSize) * gridSize
-                                : relativeX;
-
-                            const snappedRelativeY = distToNearestY < snapThreshold
-                                ? Math.round(relativeY / gridSize) * gridSize
-                                : relativeY;
-
-                            // Convert back to layer coordinates
-                            return {
-                                x: snappedRelativeX + stagePosition.x,
-                                y: snappedRelativeY + stagePosition.y,
-                            };
-                        }}
-                    />
+                    <ShapeTransformer />
                 </Layer>
 
-                <Layer name="drag" ref={dragLayerRef} />
+                <Layer listening={false} name="top">
+                    <Cursors />
+                </Layer>
 
-                <Cursors />
             </Stage>
 
             <ContextMenu />

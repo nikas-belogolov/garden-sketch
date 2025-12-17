@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useReducer, useRef, useS
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { Awareness } from 'y-protocols/awareness'
-import { Shape } from "@/app/app/garden/[gardenId]/common";
+import { Shape } from "@/lib/garden-canvas";
 import { TypedMap } from "yjs-types";
 import { useAuth } from "./AuthContext";
 import { useRouter } from "next/navigation";
@@ -35,7 +35,7 @@ function GardenProvider({
     const { user } = useAuth()
     const router = useRouter()
 
-    const gardenId = "123"
+    const gardenId = "1233"
 
     const [awareness, setAwareness] = useState<Awareness | null>(null)
 

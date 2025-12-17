@@ -1,15 +1,12 @@
 'use client';
 
-import { Activity, useState } from "react";
-import { cn } from "@/lib/utils";
-import PlantsMenu from "./menus/PlantsMenu";
-import ObjectsMenu from "./menus/ObjectsMenu";
-import PathsMenu from "./menus/PathsMenu";
-import IrrigationMenu from "./menus/IrrigationMenu";
-import { LuFlower2, LuArmchair } from "react-icons/lu";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { LuArmchair, LuFlower2 } from "react-icons/lu";
+import ObjectsMenu from "./menus/ObjectsMenu";
+import PlantsMenu from "./menus/PlantsMenu";
 
 type MenuType = 'plants' | 'objects' | 'paths' | 'irrigation';
 
@@ -28,24 +25,24 @@ export default function BottomMenu({ className }: { className?: string }) {
             <div className="w-14 border-r flex flex-col items-center py-2 gap-2 bg-muted/30 shrink-0">
                 <TooltipProvider delayDuration={0}>
                     {/* <ScrollArea> */}
-                        {menus.map((menu) => (
-                            <Tooltip key={menu.id}>
-                                <TooltipTrigger asChild>
-                                    <Button
-                                        variant={activeMenu === menu.id ? "secondary" : "ghost"}
-                                        size="icon"
-                                        onClick={() => setActiveMenu(menu.id)}
-                                        className={cn("h-10 w-10", activeMenu === menu.id && "bg-background shadow-sm")}
-                                    >
-                                        <menu.icon size={20} />
-                                        <span className="sr-only">{menu.label}</span>
-                                    </Button>
-                                </TooltipTrigger>
-                                <TooltipContent side="left">
-                                    <p>{menu.label}</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        ))}
+                    {menus.map((menu) => (
+                        <Tooltip key={menu.id}>
+                            <TooltipTrigger asChild>
+                                <Button
+                                    variant={activeMenu === menu.id ? "secondary" : "ghost"}
+                                    size="icon"
+                                    onClick={() => setActiveMenu(menu.id)}
+                                    className={cn("h-10 w-10", activeMenu === menu.id && "bg-background shadow-sm")}
+                                >
+                                    <menu.icon size={20} />
+                                    <span className="sr-only">{menu.label}</span>
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent side="left">
+                                <p>{menu.label}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    ))}
                     {/* </ScrollArea> */}
 
                 </TooltipProvider>
